@@ -12,6 +12,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
+            android:name=".PizzaDetailActivity"
+            android:label="@string/title_activity_pizza_detail"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
             android:name=".OrderActivity"
             android:label="@string/title_activity_order"
             android:parentActivityName=".MainActivity">
