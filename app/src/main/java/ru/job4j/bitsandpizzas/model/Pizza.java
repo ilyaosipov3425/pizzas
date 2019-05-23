@@ -1,8 +1,10 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.model;
+
+import ru.job4j.bitsandpizzas.R;
 
 /**
  * Класс Pizza - определяет массив, который содержит название и изображение
- * @author Ilya Osipov (mailto:i.osipov.ya@yandex.ru)
+ * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 23.05.2019
  * @version $Id$
  */

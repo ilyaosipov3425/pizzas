@@ -1,4 +1,4 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import ru.job4j.bitsandpizzas.CaptionedImagesAdapter;
+import ru.job4j.bitsandpizzas.R;
+import ru.job4j.bitsandpizzas.StoresDetailActivity;
+import ru.job4j.bitsandpizzas.model.Stores;
+
 /**
- * Класс StoresMaterialsFragment
+ * Класс StoresMaterialsFragment - фрагмент служит для отображения списка магазинов в Material Design
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 23.05.2019
  * @version $Id$

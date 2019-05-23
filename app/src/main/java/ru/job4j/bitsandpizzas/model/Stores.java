@@ -1,4 +1,6 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.model;
+
+import ru.job4j.bitsandpizzas.R;
 
 /**
  * Класс Stores - определяет массив, который содержит название и изображение

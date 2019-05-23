@@ -18,6 +18,11 @@ import android.widget.ListView;
 import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
+import ru.job4j.bitsandpizzas.fragment.PastaMaterialFragment;
+import ru.job4j.bitsandpizzas.fragment.PizzaMaterialFragment;
+import ru.job4j.bitsandpizzas.fragment.StoresMaterialFragment;
+import ru.job4j.bitsandpizzas.fragment.TopFragment;
+
 /**
  * Класс MainActivity - activity
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
@@ -144,7 +149,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 return true;
             case R.id.action_settings:
-                Toast.makeText(this, "There are no settings",
+                Toast.makeText(this, R.string.toast_setting,
                         Toast.LENGTH_SHORT).show();
                 return true;
             default:

@@ -1,4 +1,6 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.model;
+
+import ru.job4j.bitsandpizzas.R;
 
 /**
  * Класс Pasta - определяет массив, который содержит название и изображение
@@ -12,8 +14,8 @@ public class Pasta {
     private int imageResourceId;
 
     public static final Pasta[] pastas = {
-        new Pasta("Spaghetti Bolognese", R.drawable.spaghetti_bolognese),
-        new Pasta("Lasagne", R.drawable.lasagne)
+            new Pasta("Spaghetti Bolognese", R.drawable.spaghetti_bolognese),
+            new Pasta("Lasagne", R.drawable.lasagne)
     };
 
     private Pasta(String name, int imageResourceId) {

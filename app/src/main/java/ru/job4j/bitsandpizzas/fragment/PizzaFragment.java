@@ -1,4 +1,4 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.fragment;
 
 import android.os.Bundle;
 import android.app.ListFragment;
@@ -7,14 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import ru.job4j.bitsandpizzas.R;
+
 /**
- * Класс PastaFragment - фрагмент служит для отображения видов списка пасты
+ * Класс PizzaFragment - фрагмент служит для отображения списка видов пиццы
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 09.05.2019
  * @version $Id$
  */
 
-public class PastaFragment extends ListFragment {
+public class PizzaFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,8 +24,9 @@ public class PastaFragment extends ListFragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 inflater.getContext(),
                 android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.pasta));
+                getResources().getStringArray(R.array.pizzas));
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
+
 }

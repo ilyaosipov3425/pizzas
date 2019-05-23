@@ -14,7 +14,7 @@
         android:id="@+id/welcome_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_text" />
+        android:text="@string/welcome_text"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pizza_recycler"

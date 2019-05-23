@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.OrientationEventListener;
 import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
+
+import ru.job4j.bitsandpizzas.model.Stores;
 
 /**
  * Класс StoresDetailActivity - выводит адрес, номер телефона и изображение выбраные пользователем

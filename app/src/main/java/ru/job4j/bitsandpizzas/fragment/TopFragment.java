@@ -1,4 +1,4 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import ru.job4j.bitsandpizzas.CaptionedImagesAdapter;
+import ru.job4j.bitsandpizzas.PastaDetailActivity;
+import ru.job4j.bitsandpizzas.PizzaDetailActivity;
+import ru.job4j.bitsandpizzas.R;
+import ru.job4j.bitsandpizzas.model.Pasta;
+import ru.job4j.bitsandpizzas.model.Pizza;
+
 /**
- * Класс TopFragment - фрагмент для вывода контента верхнего уровня
+ * Класс TopFragment - фрагмент для отображения контента верхнего уровня
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 09.05.2019
  * @version $Id$

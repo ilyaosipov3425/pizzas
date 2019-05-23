@@ -1,4 +1,4 @@
-package ru.job4j.bitsandpizzas;
+package ru.job4j.bitsandpizzas.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import ru.job4j.bitsandpizzas.CaptionedImagesAdapter;
+import ru.job4j.bitsandpizzas.PastaDetailActivity;
+import ru.job4j.bitsandpizzas.R;
+import ru.job4j.bitsandpizzas.model.Pasta;
+
 /**
- * Класс PastaMaterialFragment
+ * Класс PastaMaterialFragment - фрагмент служит для отображения списка видов пасты в Material Design
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 23.05.2019
  * @version $Id$

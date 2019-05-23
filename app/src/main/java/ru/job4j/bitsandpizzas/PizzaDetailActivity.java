@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
+import ru.job4j.bitsandpizzas.model.Pizza;
+
 /**
  * Класс PizzaDetailActivity - выводит название пиццы, выбранной пользователем, вместе с ее изображением
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
@@ -29,13 +31,11 @@ public class PizzaDetailActivity extends Activity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Заполнение TextView информацией о пиццы
         int pizzaNo = (Integer)getIntent().getExtras().get(EXTRA_PIZZANO);
         String pizzaName = Pizza.pizzas[pizzaNo].getName();
         textView = findViewById(R.id.pizza_text);
         textView.setText(pizzaName);
 
-        // Заполнение ImageView изображением пиццы
         int pizzaImage = Pizza.pizzas[pizzaNo].getImageResourceId();
         imageView = findViewById(R.id.pizza_image);
         imageView.setImageDrawable(getResources().getDrawable(pizzaImage));
@@ -46,7 +46,6 @@ public class PizzaDetailActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        // Изпользование название пиццы в Share
         textView = findViewById(R.id.pizza_text);
         CharSequence pizzaName = textView.getText();
         MenuItem menuItem = menu.findItem(R.id.action_share);

@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
+import ru.job4j.bitsandpizzas.model.Pasta;
+
 /**
  * Класс PastaDetailActivity - выводит название пасты, выбранной пользователем, вместе с ее изображением
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
