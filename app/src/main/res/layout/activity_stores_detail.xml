@@ -5,20 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PizzaDetailActivity"
+    tools:context=".StoresDetailActivity"
     tools:ignore="UseCompoundDrawables">
 
+    <ImageView
+        android:id="@+id/stores_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        tools:ignore="ContentDescription"/>
+
     <TextView
-        android:id="@+id/pizza_text"
+        android:id="@+id/stores_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <ImageView
-        android:id="@+id/pizza_image"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/stores_phone"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        tools:ignore="ContentDescription" />
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 </LinearLayout>

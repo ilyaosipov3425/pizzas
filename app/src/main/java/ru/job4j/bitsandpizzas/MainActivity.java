@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ShareActionProvider;
+import android.widget.Toast;
 
 /**
  * Класс MainActivity - activity
@@ -67,26 +68,26 @@ public class MainActivity extends Activity {
         getActionBar().setHomeButtonEnabled(true);
 
         getFragmentManager().addOnBackStackChangedListener(
-                new FragmentManager.OnBackStackChangedListener() {
-                    public void onBackStackChanged() {
-                        FragmentManager fragMan = getFragmentManager();
-                        Fragment fragment = fragMan.findFragmentByTag("visible_fragment");
-                        if (fragment instanceof TopFragment) {
-                            currentPosition = 0;
-                        }
-                        //if (fragment instanceof PizzaFragment) {
-                        if (fragment instanceof PizzaMaterialFragment) {
-                            currentPosition = 1;
-                        }
-                        if (fragment instanceof PastaFragment) {
-                            currentPosition = 2;
-                        }
-                        if (fragment instanceof StoresFragment) {
-                            currentPosition = 3;
-                        }
-                        setActionBarTitle(currentPosition);
-                        drawerList.setItemChecked(currentPosition, true);
+                () -> {
+                    FragmentManager fragMan = getFragmentManager();
+                    Fragment fragment = fragMan.findFragmentByTag("visible_fragment");
+                    if (fragment instanceof TopFragment) {
+                        currentPosition = 0;
                     }
+                    //if (fragment instanceof PizzaFragment) {
+                    if (fragment instanceof PizzaMaterialFragment) {
+                        currentPosition = 1;
+                    }
+                    //if (fragment instanceof PastaFragment) {
+                    if (fragment instanceof PastaMaterialFragment) {
+                        currentPosition = 2;
+                    }
+                    //if (fragment instanceof StoresFragment) {
+                    if (fragment instanceof StoresMaterialFragment) {
+                        currentPosition = 3;
+                    }
+                    setActionBarTitle(currentPosition);
+                    drawerList.setItemChecked(currentPosition, true);
                 }
         );
     }
@@ -143,6 +144,8 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 return true;
             case R.id.action_settings:
+                Toast.makeText(this, "There are no settings",
+                        Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -165,10 +168,12 @@ public class MainActivity extends Activity {
                 fragment = new PizzaMaterialFragment();
                 break;
             case 2:
-                fragment = new PastaFragment();
+                //fragment = new PastaFragment();
+                fragment = new PastaMaterialFragment();
                 break;
             case 3:
-                fragment = new StoresFragment();
+                //fragment = new StoresFragment();
+                fragment = new StoresMaterialFragment();
                 break;
             default:
                 fragment = new TopFragment();

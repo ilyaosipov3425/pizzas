@@ -25,6 +25,7 @@ public class TopFragment extends Fragment {
         RelativeLayout layout = (RelativeLayout)
                 inflater.inflate(R.layout.fragment_top, container, false);
         RecyclerView pizzaRecycler = layout.findViewById(R.id.pizza_recycler);
+        RecyclerView pastaRecycler = layout.findViewById(R.id.pasta_recycler);
 
         String[] pizzaNames = new String[2];
         for (int i = 0; i < 2; i++) {
@@ -36,14 +37,35 @@ public class TopFragment extends Fragment {
             pizzaImages[i] = Pizza.pizzas[i].getImageResourceId();
         }
 
-        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
-        pizzaRecycler.setLayoutManager(layoutManager);
-        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(pizzaNames, pizzaImages);
-        pizzaRecycler.setAdapter(adapter);
-        adapter.setListener(
+        String[] pastaNames = new String[2];
+        for (int i = 0; i < 2; i++) {
+            pastaNames[i] = Pasta.pastas[i].getName();
+        }
+
+        int[] pastaImages = new int[2];
+        for (int i = 0; i < 2; i++) {
+            pastaImages[i] = Pasta.pastas[i].getImageResourceId();
+        }
+
+        GridLayoutManager layoutManagerPizza = new GridLayoutManager(getActivity(), 2);
+        pizzaRecycler.setLayoutManager(layoutManagerPizza);
+        CaptionedImagesAdapter adapterPizza = new CaptionedImagesAdapter(pizzaNames, pizzaImages);
+        pizzaRecycler.setAdapter(adapterPizza);
+        adapterPizza.setListener(
                 (position) -> {
                     Intent intent = new Intent(getActivity(), PizzaDetailActivity.class);
                     intent.putExtra(PizzaDetailActivity.EXTRA_PIZZANO, position);
+                    getActivity().startActivity(intent);
+                });
+
+        GridLayoutManager layoutManagerPasta = new GridLayoutManager(getActivity(), 2);
+        pastaRecycler.setLayoutManager(layoutManagerPasta);
+        CaptionedImagesAdapter adapterPasta = new CaptionedImagesAdapter(pastaNames, pastaImages);
+        pastaRecycler.setAdapter(adapterPasta);
+        adapterPasta.setListener(
+                (position) -> {
+                    Intent intent = new Intent(getActivity(), PastaDetailActivity.class);
+                    intent.putExtra(PastaDetailActivity.EXTRA_PASTANO, position);
                     getActivity().startActivity(intent);
                 });
         return layout;

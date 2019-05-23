@@ -8,6 +8,8 @@
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
     <string name="title_activity_pizza_detail">Pizza Detail</string>
+    <string name="title_activity_pasta_detail">Pasta Detail</string>
+    <string name="title_activity_stores_detail">Stores Detail</string>
     <string name="welcome_text">We offer a range of freshly baked pizza and pasta dishes. Why not try some?</string>
 
     <!-- PizzaFragment -->
