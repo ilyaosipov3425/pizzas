@@ -17,8 +17,8 @@ import android.widget.TextView;
  */
 
 public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImagesAdapter.ViewHolder> {
-    private String[] captions;
-    private int[] imageIds;
+    private final String[] captions;
+    private final int[] imageIds;
     private Listener listener;
     private CardView cardView;
     private ImageView imageView;
@@ -30,8 +30,8 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private CardView cardView;
-        public ViewHolder(CardView v) {
+        private final CardView cardView;
+        private ViewHolder(CardView v) {
             super(v);
             cardView = v;
         }

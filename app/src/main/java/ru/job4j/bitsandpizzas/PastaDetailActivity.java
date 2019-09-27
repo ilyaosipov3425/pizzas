@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import ru.job4j.bitsandpizzas.model.Pasta;
 
 /**
@@ -29,9 +31,10 @@ public class PastaDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pasta_detail);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(Objects.requireNonNull(getActionBar()))
+                .setDisplayHomeAsUpEnabled(true);
 
-        int pastaNo = (Integer)getIntent().getExtras().get(EXTRA_PASTANO);
+        int pastaNo = (Integer) getIntent().getExtras().get(EXTRA_PASTANO);
         String pastaName = Pasta.pastas[pastaNo].getName();
         textView = findViewById(R.id.pasta_text);
         textView.setText(pastaName);
@@ -59,13 +62,11 @@ public class PastaDetailActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_create_order:
-                Intent intent = new Intent(this, OrderActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.action_create_order) {
+            Intent intent = new Intent(this, OrderActivity.class);
+            startActivity(intent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

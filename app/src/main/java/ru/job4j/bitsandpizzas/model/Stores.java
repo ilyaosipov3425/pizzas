@@ -10,15 +10,15 @@ import ru.job4j.bitsandpizzas.R;
  */
 
 public class Stores {
-    private String address;
-    private String phone;
-    private int imageResourceId;
+    private final String address;
+    private final String phone;
+    private final int imageResourceId;
 
     public static final Stores[] stores = {
-            new Stores("ADDRESS: 350, Hespeler Rd., Cambridge",
-                    "PHONE: +1 519-622-2228", R.drawable.restaurant),
-            new Stores("ADDRESS: 748, Gravenstein Hwy.N., Sebastopol",
-                    "PHONE: +1 707-824-4712", R.drawable.restaurant)
+            new Stores("Address: 350, Hespeler Rd., Cambridge",
+                    "Phone: +1 519-622-2228", R.drawable.restaurant),
+            new Stores("Address: 748, Gravenstein Hwy.N., Sebastopol",
+                    "Phone: +1 707-824-4712", R.drawable.restaurant)
     };
 
     private Stores(String address, String phone, int imageResourceId) {

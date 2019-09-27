@@ -18,6 +18,8 @@ import android.widget.ListView;
 import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 import ru.job4j.bitsandpizzas.fragment.PastaMaterialFragment;
 import ru.job4j.bitsandpizzas.fragment.PizzaMaterialFragment;
 import ru.job4j.bitsandpizzas.fragment.StoresMaterialFragment;
@@ -69,7 +71,7 @@ public class MainActivity extends Activity {
             }
         };
         drawerLayout.setDrawerListener(drawerToggle);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getActionBar()).setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
         getFragmentManager().addOnBackStackChangedListener(
@@ -199,6 +201,6 @@ public class MainActivity extends Activity {
         } else {
             title = titles[position];
         }
-        getActionBar().setTitle(title);
+        Objects.requireNonNull(getActionBar()).setTitle(title);
     }
 }

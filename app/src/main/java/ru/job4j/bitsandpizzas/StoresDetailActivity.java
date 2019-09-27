@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import ru.job4j.bitsandpizzas.model.Stores;
 
 /**
@@ -30,7 +32,7 @@ public class StoresDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stores_detail);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getActionBar()).setDisplayHomeAsUpEnabled(true);
 
         int storesNo = (Integer)getIntent().getExtras().get(EXTRA_STORESNO);
         String storesAddress = Stores.stores[storesNo].getAddress();
@@ -64,13 +66,11 @@ public class StoresDetailActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_create_order:
-                Intent intent = new Intent(this, OrderActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.action_create_order) {
+            Intent intent = new Intent(this, OrderActivity.class);
+            startActivity(intent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

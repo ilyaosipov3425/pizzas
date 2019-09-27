@@ -10,8 +10,8 @@ import ru.job4j.bitsandpizzas.R;
  */
 
 public class Pizza {
-    private String name;
-    private int imageResourceId;
+    private final String name;
+    private final int imageResourceId;
 
     public static final Pizza[] pizzas = {
             new Pizza("Diavolo", R.drawable.diavolo),

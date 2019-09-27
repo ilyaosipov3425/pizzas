@@ -6,7 +6,6 @@
     <string name="toast_setting">There are no settings</string>
 
     <!-- Title -->
-    <string name="title_top">Top fragment</string>
     <string name="title_activity_order">Order Activity</string>
     <string name="title_activity_pizza_detail">Pizza Detail</string>
     <string name="title_activity_pasta_detail">Pasta Detail</string>

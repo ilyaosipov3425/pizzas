@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import ru.job4j.bitsandpizzas.model.Pizza;
 
 /**
@@ -29,9 +31,9 @@ public class PizzaDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza_detail);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        int pizzaNo = (Integer)getIntent().getExtras().get(EXTRA_PIZZANO);
+        int pizzaNo = (Integer) getIntent().getExtras().get(EXTRA_PIZZANO);
         String pizzaName = Pizza.pizzas[pizzaNo].getName();
         textView = findViewById(R.id.pizza_text);
         textView.setText(pizzaName);
@@ -59,13 +61,11 @@ public class PizzaDetailActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_create_order:
-                Intent intent = new Intent(this, OrderActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.action_create_order) {
+            Intent intent = new Intent(this, OrderActivity.class);
+            startActivity(intent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }
